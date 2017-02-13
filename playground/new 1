@@ -1,0 +1,25 @@
+db.collection('Todos').insertOne({
+	
+	text:'something to do',
+completed:false
+
+},(err,result)=>{
+	
+	if(err){
+		return console.log('Error:',err);
+	}
+	
+	console.log(JSON.stringify(result.ops,undefined,2));
+	
+});
+
+db.collection('Todos').find({
+	_id:new ObjectID('58a200b8bcf6b90d0c619ab2')
+})
+.toArray().then((docs)=>{
+	
+	
+	console.log('todos');console.log(JSON.stringify(docs,undefined,2));
+},(err)=>{
+	console.log(err);
+});

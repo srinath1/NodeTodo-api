@@ -8,18 +8,22 @@ return console.log('umable to connect')
 }
 console.log('Connected to Mongodb server');
 
-db.collection('Todos').findOneAndUpdate({_id:new ObjectID("58a200b8bcf6b90d0c619ab2")},
+db.collection('Users').findOneAndUpdate({_id:new ObjectID("58a3537c18913f77dfff502b")},
 	{
 		$set:{
-		completed:true}
+		name:'ravi'},
+		
+			$inc:{
+				age:1
+			}
 	},{
-		returnOriginal:false;
+		returnOriginal:false
 	})
 
 
 
 
-).then((result)=>{
+.then((result)=>{
 	console.log(result);
 
 //db.close();
